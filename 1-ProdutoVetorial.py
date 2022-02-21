@@ -15,6 +15,8 @@ from time import sleep
 
 map_numbers = [0,0,0,0,0,0]
 
+print("CALCULO DO PRODUTO VETORIAL\n")
+
 def print_matrix():
     matrix_vector = np.array([ [map_numbers[0], map_numbers[1], map_numbers[2]] , 
         [map_numbers[3], map_numbers[4], map_numbers[5]]])
@@ -23,11 +25,19 @@ def print_matrix():
 
 print_matrix()
 
+# for i in range(0, len(map_numbers)):
+#     val_to_insert = int(input("Insira os valores das componentes x,y e z do vetor A  {}: ".format(i+1)))
+#     map_numbers.pop(i)
+#     map_numbers.insert(i, val_to_insert)
+#     print_matrix()
+
+map_numbers[0], map_numbers[1], map_numbers[2] = input("Insira os valores das componentes x, y e z do vetor A: ").split()
+map_numbers[3], map_numbers[4], map_numbers[5] = input("Insira os valores das componentes x, y e z do vetor B: ").split()
+
 for i in range(0, len(map_numbers)):
-    val_to_insert = int(input("Insira o valor posicao {}: ".format(i+1)))
-    map_numbers.pop(i)
-    map_numbers.insert(i, val_to_insert)
-    print_matrix()
+    map_numbers[i] = int(map_numbers[i])
+
+print_matrix()
 
 matrix_vector = np.array([ [map_numbers[0], map_numbers[1], map_numbers[2]] , 
         [map_numbers[3], map_numbers[4], map_numbers[5]]])
